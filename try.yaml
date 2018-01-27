@@ -7,15 +7,15 @@ symbols:
   
   
 definitions:
-   (1/c) = beta*(1/c(+1))*(R/pi(+1))
-m = c*(R/(R-1))
-c = y - g
-R =  alpha0 + alpha*(pi) + theta
-r = R*pi(+1)
-tau =gamma0 + gamma*b(-1) + psi
-theta = rhot*theta(-1) + ep1
-psi = rhop*psi(-1) - ep2
-b + m + tau = g +R(-1)*b(-1)/pi + m(-1)/pi
+   (1/c): beta*(1/c(+1))*(R/pi(+1))
+m: c*(R/(R-1))
+c: y - g
+R:  alpha0 + alpha*(pi) + theta
+r: R*pi(+1)
+tau: gamma0 + gamma*b(-1) + psi
+theta: rhot*theta(-1) + ep1
+psi: rhop*psi(-1) - ep2
+b + m + tau: g +R(-1)*b(-1)/pi + m(-1)/pi
 
 
 
