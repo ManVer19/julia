@@ -6,16 +6,15 @@ symbols:
   parameters: [beta, g, y, alpha, gamma, rhot, rhop, alpha0, gamma0]
   
 definitions:
-c: (beta*(1/c(+1))*(R/pi(+1)))^-1
-m: c*(R/(R-1))
-c: y - g
-R:  alpha0 + alpha*(pi) + theta
-r: R*pi(+1)
-tau: gamma0 + gamma*b(-1) + psi
-theta: rhot*theta(-1) + ep1
-psi: rhop*psi(-1) - ep2
-b: g +R(-1)*b(-1)/pi + m(-1)/pi - m - tau
-
+c: (beta*(1/c(+1))*(R/pi(+1)))^-1 #Euler equation from household optimisation
+m: c*(R/(R-1))                     # Money demand from household optimisation
+c: y - g #Goods market clearing
+R:  alpha0 + alpha*(pi) + theta #Monetary Policy Rule
+tau: gamma0 + gamma*b(-1) + psi #Fiscal policy rule
+theta: rhot*theta(-1) + ep1 #Shock to monetary policy ~AR(1)
+psi: rhop*psi(-1) - ep2   #Shock to fiscal policy ~AR(1)
+b: g +R(-1)*b(-1)/pi + m(-1)/pi - m - tau #Government budget constraint
+r: R*pi(+1) #Fisher equation
 equations:
 
 calibration:
@@ -42,7 +41,7 @@ psi: 0
 r: R*pi
 
 exogenous:!VAR1 
-    rho: 0.9
+    rho: 0.9 #Error in this line?
     Sigma: [[0.01, 0.001],
              [0.001, 0.02]]
     N: 3
