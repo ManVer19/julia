@@ -16,6 +16,8 @@ theta: rhot*theta(-1) + ep1
 psi: rhop*psi(-1) - ep2
 b: g +R(-1)*b(-1)/pi + m(-1)/pi - m - tau
 
+equations:
+
 calibration:
     # parameters
 beta: 0.99
