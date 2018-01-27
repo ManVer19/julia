@@ -1,3 +1,5 @@
+Name: FTPL
+
 symbols:
   variables: [c, m, R, pi, b, tau, theta, psi, r]
   shocks: [ep1, ep2]
