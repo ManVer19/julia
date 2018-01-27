@@ -5,13 +5,6 @@ symbols:
   shocks: [ep1, ep2]
   parameters: [beta, g, y, alpha, gamma, rhot, rhop, alpha0, gamma0]
   
-  
-  
-  
-  
-  
-  
-  
 definitions:
 c: (beta*(1/c(+1))*(R/pi(+1)))^-1
 m: c*(R/(R-1))
@@ -22,8 +15,6 @@ tau: gamma0 + gamma*b(-1) + psi
 theta: rhot*theta(-1) + ep1
 psi: rhop*psi(-1) - ep2
 b: g +R(-1)*b(-1)/pi + m(-1)/pi - m - tau
-
-
 
 calibration:
     # parameters
@@ -37,8 +28,8 @@ rhop: 0.0
 alpha0: 0.5
 gamma0: 1
 
-    # steady_state
-    c: 8
+# steady_state
+c: 8
 R: alpha0/(1 - alpha*beta)
 pi: beta*R
 m: c*(R/(R-1))
@@ -48,14 +39,9 @@ theta: 0
 psi: 0
 r: R*pi
 
-
-
-exogenous: !VAR1 
-    ep1: 0.08
-    ep2: 0.08
-   
+ exogenous:!VAR1 
+    rho: 0.9
+    sigma: [[0.01, 0.001],
+             [0.001, 0.02]]
     N: 3
-    
-options:
-    grid: !Cartesian
         orders: [40, 10, 10]
