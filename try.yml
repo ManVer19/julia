@@ -40,7 +40,7 @@ theta: 0
 psi: 0
 r: R*pi
 
-exogenous:!VAR1 
+exogenous: !VAR1 
     rho: 0.9 #Error in this line?
     Sigma: [[0.01, 0.001],
              [0.001, 0.02]]
