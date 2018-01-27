@@ -39,7 +39,7 @@ r: R*pi
 
  exogenous:!VAR1 
     rho: 0.9
-    sigma: [[0.01, 0.001],
+    Sigma: [[0.01, 0.001],
              [0.001, 0.02]]
     N: 3
         orders: [40, 10, 10]
