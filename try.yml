@@ -6,42 +6,42 @@ symbols:
   parameters: [beta, g, y, alpha, gamma, rhot, rhop, alpha0, gamma0]
   
 definitions:
-c: (beta*(1/c(+1))*(R/pi(+1)))^-1 #Euler equation from household optimisation
-m: c*(R/(R-1))                     # Money demand from household optimisation
-c: y - g #Goods market clearing
-R:  alpha0 + alpha*(pi) + theta #Monetary Policy Rule
-tau: gamma0 + gamma*b(-1) + psi #Fiscal policy rule
-theta: rhot*theta(-1) + ep1 #Shock to monetary policy ~AR(1)
-psi: rhop*psi(-1) - ep2   #Shock to fiscal policy ~AR(1)
-b: g +R(-1)*b(-1)/pi + m(-1)/pi - m - tau #Government budget constraint
-r: R*pi(+1) #Fisher equation
-equations:
+  c: (beta*(1/c(+1))*(R/pi(+1)))^-1 #Euler equation from household optimisation
+  m: c*(R/(R-1))                     # Money demand from household optimisation
+  c: y - g #Goods market clearing
+  R:  alpha0 + alpha*(pi) + theta #Monetary Policy Rule
+  tau: gamma0 + gamma*b(-1) + psi #Fiscal policy rule
+  theta: rhot*theta(-1) + ep1 #Shock to monetary policy ~AR(1)
+  psi: rhop*psi(-1) - ep2   #Shock to fiscal policy ~AR(1)
+  b: g +R(-1)*b(-1)/pi + m(-1)/pi - m - tau #Government budget constraint
+  r: R*pi(+1) #Fisher equation
+
 
 calibration:
     # parameters
-beta: 0.99
-y: 10
-g: 2
-alpha: 0.3
-gamma: 0.01
-rhot: 0.0
-rhop: 0.0
-alpha0: 0.5
-gamma0: 1
+  beta: 0.99
+  y: 10
+  g: 2
+  alpha: 0.3
+  gamma: 0.01
+  rhot: 0.0
+  rhop: 0.0
+  alpha0: 0.5
+  gamma0: 1
 
 # steady_state
-c: 8
-R: alpha0/(1 - alpha*beta)
-pi: beta*R
-m: c*(R/(R-1))
-b: (1/(1 + gamma - (R/pi)))*(g - gamma0 - m*(1 - (1/pi)))
-tau: gamma0 + gamma*b
-theta: 0
-psi: 0
-r: R*pi
+  c: 8
+  R: alpha0/(1 - alpha*beta)
+  pi: beta*R
+  m: c*(R/(R-1))
+  b: (1/(1 + gamma - (R/pi)))*(g - gamma0 - m*(1 - (1/pi)))
+  tau: gamma0 + gamma*b
+  theta: 0
+  psi: 0
+  r: R*pi
 
 exogenous: !VAR1 
-    rho: 0.8 #Error in this line?
+    rho: [0.8, 0.9] #Error in this line?
     Sigma: [[0.01, 0.001],
              [0.001, 0.02]]
 options:
