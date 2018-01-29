@@ -41,7 +41,7 @@ calibration:
   r: R*pi
 
 exogenous: !VAR1 
-    rho: [0.8, 0.9] #Error in this line?
+    rho: [0.8, 0.9],
     Sigma: [[0.01, 0.001],
              [0.001, 0.02]]
 options:
