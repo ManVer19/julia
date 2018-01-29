@@ -1,30 +1,25 @@
 Name: FTPL
 
 symbols:
-  variables: [c, m, R, pi, b, tau, theta, psi, r]
-  shocks: [ep1, ep2]
-  parameters: [beta, g, y, alpha, gamma, rhot, rhop, alpha0, gamma0]
-  
+    variables: [c, m, R, pi, b, tau, theta, psi, r]
+    shocks: [ep1, ep2]
+    parameters: [beta, g, y, alpha, gamma, rhot, rhop, alpha0, gamma0]
+    
 definitions:
-  m: c*(R/(R-1))                     # Money demand from household optimisation
-  c: y - g #Goods market clearing
-  R:  alpha0 + alpha*(pi) + theta #Monetary Policy Rule
-  tau: gamma0 + gamma*b(-1) + psi #Fiscal policy rule
-  theta: rhot*theta(-1) + ep1 #Shock to monetary policy ~AR(1)
-  psi: rhop*psi(-1) - ep2   #Shock to fiscal policy ~AR(1)
-  b: g +R(-1)*b(-1)/pi + m(-1)/pi - m - tau #Government budget constraint
-
-  
+    m: c*(R/(R-1))                     # Money demand from household optimisation
+    c: y - g #Goods market clearing
+    R:  alpha0 + alpha*(pi) + theta #Monetary Policy Rule
+    tau: gamma0 + gamma*b(-1) + psi #Fiscal policy rule
+    theta: rhot*theta(-1) + ep1 #Shock to monetary policy ~AR(1)
+    psi: rhop*psi(-1) - ep2   #Shock to fiscal policy ~AR(1)
+    b: g +R(-1)*b(-1)/pi + m(-1)/pi - m - tau #Government budget constraint
+    r: R*pi(+1)
+    
 equations:
 
     arbitrage:
         # Equation 11.6.3
         - 1 = beta*(c/c(+1))*(R/pi(+1)) | 0 <= c <= inf
-
-    transition:
-        # Equation 11.6.1
-        - r = R*pi(+1) #Fisher equation      
-
 
 calibration:
   beta: 0.99
