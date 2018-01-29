@@ -18,7 +18,6 @@ definitions:
 
 
 calibration:
-    # parameters
   beta: 0.99
   y: 10
   g: 2
@@ -46,4 +45,7 @@ exogenous: !VAR1
              [0.001, 0.02]]
 options:
     N: 3
+        
+options:
+    grid: !Cartesian
         orders: [40, 10, 10]
