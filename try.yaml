@@ -1,8 +1,9 @@
 Name: FTPL
 
 symbols:
-    variables: [c, m, R, pi, b, tau, theta, psi, r]
-    shocks: [ep1, ep2]
+    states: [R, pi, tau, theta, psi, r]
+    controls: [c,m,b]    
+    exogenous: [ep1, ep2]
     parameters: [beta, g, y, alpha, gamma, rhot, rhop, alpha0, gamma0]
     
 definitions:
