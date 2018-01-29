@@ -12,7 +12,7 @@ definitions:
     R:  alpha0 + alpha*(pi) + theta #Monetary Policy Rule
     tau: gamma0 + gamma*b(-1) + psi #Fiscal policy rule
     theta: rhot*theta(-1) + ep1 #Shock to monetary policy ~AR(1)
-    psi: rhop*psi(-1) - ep2   #Shock to fiscal policy ~AR(1)
+    psi: rhop*psi(-1) + ep2   #Shock to fiscal policy ~AR(1)
     b: g +R(-1)*b(-1)/pi + m(-1)/pi - m - tau #Government budget constraint
     r: R*pi(+1)
     
