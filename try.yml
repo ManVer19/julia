@@ -15,7 +15,7 @@ definitions:
   b: g +R(-1)*b(-1)/pi + m(-1)/pi - m - tau #Government budget constraint
 
   
-  equations:
+equations:
 
     arbitrage:
         # Equation 11.6.3
