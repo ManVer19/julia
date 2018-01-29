@@ -2,7 +2,7 @@ Name: FTPL
 
 symbols:
     states: [R, pi, tau, theta, psi, r]
-    controls: [c,m,b]    
+    controls: [c, m, b]    
     exogenous: [ep1, ep2]
     parameters: [beta, g, y, alpha, gamma, rhot, rhop, alpha0, gamma0]
     
